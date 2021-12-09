@@ -30,7 +30,10 @@
                                 </label>
                                 <select name="from"
                                     class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border-4">
-                                    <option class="py-1">EUR</option>
+                                    @foreach ($codes as $code => $value)
+                                        <option class="py-1" {{ $code == 'EUR' ? 'selected' : '' }}>
+                                            {{ $code }}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
@@ -41,7 +44,10 @@
                                 </label>
                                 <select name="to"
                                     class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border-4">
-                                    <option class="py-1">USD</option>
+                                    @foreach ($codes as $code => $value)
+                                        <option class="py-1" {{ $code == 'USD' ? 'selected' : '' }}>
+                                            {{ $code }}</option>
+                                    @endforeach
                                 </select>
                             </div>
 

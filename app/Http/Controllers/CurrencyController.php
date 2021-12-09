@@ -9,7 +9,9 @@ class CurrencyController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('index', [
+            'codes' => Currency::rates()->latest()->get()
+        ]);
     }
 
     public function convert()
@@ -17,8 +19,9 @@ class CurrencyController extends Controller
         $currency = Currency::convert()
             ->from('USD')
             ->to('EUR')
+            ->amount(100)
             ->get();
 
-        dd($currency);
+        dd($codes);
     }
 }
