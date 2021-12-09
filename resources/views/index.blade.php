@@ -63,6 +63,11 @@
                 </form>
             </div>
         </div>
+        @if (session('conversion'))
+            <div class="text-gray-500 text-center pt-12 font-bold text-5xl w-4/5 mx-auto">
+                {{ session('conversion') }}
+            </div>
+        @endif
     </div>
 
 @endsection
