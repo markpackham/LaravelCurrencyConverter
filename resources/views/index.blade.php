@@ -45,6 +45,13 @@
                                 </select>
                             </div>
 
+                            <div class="float-right text-right">
+                                <button type="submit"
+                                    class="bg-blue-600 border font-bold mt-6 py-4 px-5 rounded-xl transition-all hover:bg-blue-400">
+                                    Submit
+                                </button>
+                            </div>
+
                         </div>
                     </div>
                 </form>
