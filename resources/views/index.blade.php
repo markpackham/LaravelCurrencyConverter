@@ -20,7 +20,7 @@
                                 <label for="amount" class="mb-3 text-black">
                                     Amount
                                 </label>
-                                <input type="text" name="amount" placeholder="1.00"
+                                <input value="{{ @session('amount') }}" type="text" name="amount" placeholder="1.00"
                                     class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border-4">
                             </div>
 
@@ -31,7 +31,8 @@
                                 <select name="from"
                                     class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border-4">
                                     @foreach ($codes as $code => $value)
-                                        <option class="py-1" {{ $code == 'EUR' ? 'selected' : '' }}>
+                                        <option class="py-1"
+                                            {{ $code == @session('from') || $code == 'EUR' ? 'selected' : '' }}>
                                             {{ $code }}</option>
                                     @endforeach
                                 </select>
@@ -45,7 +46,8 @@
                                 <select name="to"
                                     class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border-4">
                                     @foreach ($codes as $code => $value)
-                                        <option class="py-1" {{ $code == 'USD' ? 'selected' : '' }}>
+                                        <option class="py-1"
+                                            {{ $code == @session('to') || $code == 'USD' ? 'selected' : '' }}>
                                             {{ $code }}</option>
                                     @endforeach
                                 </select>
