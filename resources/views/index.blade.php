@@ -13,6 +13,40 @@
                 </div>
                 <form action="/convert" method="POST">
                     @csrf
+
+                    <div class="px-4p-12 text-white">
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex flex-col font-bold w-2/6 px-2">
+                                <label for="amount" class="mb-3 text-black">
+                                    Amount
+                                </label>
+                                <input type="text" name="amount" placeholder="1.00"
+                                    class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border-4">
+                            </div>
+
+                            <div class="flex flex-col font-bold w-4/6 px-2">
+                                <label for="from" class="mb-3 text-black">
+                                    From
+                                </label>
+                                <select name="from"
+                                    class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border-4">
+                                    <option class="py-1">EUR</option>
+                                </select>
+                            </div>
+
+
+                            <div class="flex flex-col font-bold w-4/6 px-2">
+                                <label for="to" class="mb-3 text-black">
+                                    To
+                                </label>
+                                <select name="to"
+                                    class="py-3 px-5 rounded focus:outline-none text-gray-600 focus:text-gray-600 border-4">
+                                    <option class="py-1">USD</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
