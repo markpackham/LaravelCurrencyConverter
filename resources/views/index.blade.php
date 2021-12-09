@@ -14,8 +14,8 @@
                 <form action="/convert" method="POST">
                     @csrf
 
-                    <div class="px-4p-12 text-white">
-                        <div class="flex items-center justify-between mb-5">
+                    <div class="px-4 py-12 text-white">
+                        <div class="flex items-centr justify-between mb-5">
                             <div class="flex flex-col font-bold w-2/6 px-2">
                                 <label for="amount" class="mb-3 text-black">
                                     Amount
@@ -69,6 +69,12 @@
             <div class="text-gray-500 text-center pt-12 font-bold text-5xl w-4/5 mx-auto">
                 {{ session('conversion') }}
             </div>
+        @elseif ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="text-red-500 text-center pt-12 font-bold text-5xl w-4/5 mx-auto">
+                    {{ $error }}
+                </div>
+            @endforeach
         @endif
     </div>
 
