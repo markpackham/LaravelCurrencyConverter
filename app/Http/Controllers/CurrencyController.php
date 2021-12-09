@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use AmrShawky\LaravelCurrency\Facade\Currency;
 
 class CurrencyController extends Controller
 {
@@ -13,6 +14,11 @@ class CurrencyController extends Controller
 
     public function convert()
     {
-        dd('Test');
+        $currency = Currency::convert()
+            ->from('USD')
+            ->to('EUR')
+            ->get();
+
+        dd($currency);
     }
 }
